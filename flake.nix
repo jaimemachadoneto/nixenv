@@ -33,7 +33,7 @@
 
         devShells.default = pkgs.mkShell {
           name = "nix-dev-home";
-          nativeBuildInputs = with pkgs; [ just ];
+          nativeBuildInputs = with pkgs; [ just go-task ];
         };
       };
     };

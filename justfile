@@ -38,3 +38,14 @@ clean:
 # Run nix flake to setup environment
 run: lint check
   nix run
+
+# Build the CI Docker image
+docker-build:
+  docker build -t nix-ci -f test/Dockerfile .
+
+# Run CI tests in Docker
+docker-test:
+  docker run --rm -v $(pwd):/workspace nix-ci
+
+# Build and test in one command
+docker-ci: docker-build docker-test

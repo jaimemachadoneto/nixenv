@@ -33,7 +33,7 @@
 
     # Nix dev
     cachix
-    nil # Nix language server
+    nixd # Nix language server
     nix-info
     nixpkgs-fmt
     nixci
@@ -45,6 +45,8 @@
     # On ubuntu, we need this less for `man home-configuration.nix`'s pager to
     # work.
     less
+    just
+    direnv
   ];
 
   home.shellAliases = {
